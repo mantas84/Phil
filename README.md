@@ -19,7 +19,7 @@ App #4 for #AndroidDevChallenge.
 Inspired by https://codepen.io/davidkpiano/full/ByNPQw/
 
 Named after this guy
-<img src="/results/phil.png" width="260">
+<img src="/results/phil.jpg" width="260">
 
 
 
