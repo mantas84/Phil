@@ -20,11 +20,14 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.androiddevchallenge.features.main.MainScreen
 import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.google.accompanist.insets.ProvideWindowInsets
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +42,10 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+    ProvideWindowInsets {
+        Surface(color = MaterialTheme.colors.background) {
+            MainScreen()
+        }
     }
 }
 
@@ -59,3 +64,26 @@ fun DarkPreview() {
         MyApp()
     }
 }
+
+// @Composable
+// fun navigationComposable(navController: NavHostController) {
+//
+//    NavHost(navController, startDestination = listString) {
+//        composable(listString) {
+//            dogsList(
+//                dogs = Dogs.allDogs,
+//                onClick = {
+//                    navController.navigate("details/${it.id}")
+//                }
+//            )
+//        }
+//        composable(
+//            detailsString,
+//            arguments = listOf(navArgument("dogId") { type = NavType.IntType })
+//        ) { backStackEntry ->
+//            dogDetailsScreen(
+//                dogId = backStackEntry.arguments?.getInt("dogId")!!,
+//            )
+//        }
+//    }
+// }
