@@ -29,7 +29,7 @@ class Repository @Inject constructor(
 ) {
 
     private val cities = listOf(
-//        "vilnius",
+        "vilnius",
         "london",
         "new york",
         "paris",
